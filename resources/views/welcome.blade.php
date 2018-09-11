@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    DGIP
+                    DGIP  Esto es una prueba        
                 </div>
 
                 <div class="links">
