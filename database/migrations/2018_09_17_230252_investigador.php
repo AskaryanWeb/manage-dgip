@@ -29,7 +29,7 @@ class Investigador extends Migration
             $table->string('ua_clave_ua');
             $table->timestamps();
 
-            $table->foreign('ua_clave_ua')->references('clave_ua')->on('unidad_academica')->onDelete('cascade');
+            $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
 
 
             

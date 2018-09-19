@@ -22,10 +22,10 @@ class UnidadAcademica extends Migration
             $table->string('password');
             $table->string('pat_encargado');
             $table->string('mat_encargado');
-            $table->integer('admin_id');
+            $table->integer('administrador_id');
             $table->timestamps();
 
-            $table->foreign('admin_id')->references('id')->on('administrador')->onDelete('cascade');
+            $table->foreign('administrador_id')->references('id')->on('administrador')->onDelete('cascade');
 
         });
     }

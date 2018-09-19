@@ -15,7 +15,6 @@ class CreateEntregablesElegidosTable extends Migration
     {
         Schema::create('entregables_elegidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('entregables_elegidos_id')->unsigned();
             $table->foreign('tipos_entregables_id')->references('id')->on('tipos_entregables');
             $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
             $table->timestamps();

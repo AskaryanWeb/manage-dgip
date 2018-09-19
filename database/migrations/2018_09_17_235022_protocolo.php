@@ -15,11 +15,11 @@ class Protocolo extends Migration
     {
         Schema::create('protocolo', function(Blueprint $table){
             $table->increments('id');
-            $table->string('resumen');
-            $table->string('problematica');
-            $table->string('objetivo_gral');
-            $table->string('metodologia');
-            $table->string('metas');
+            $table->text('resumen');
+            $table->text('problematica');
+            $table->text('objetivo_gral');
+            $table->text('metodologia');
+            $table->text('metas');
             $table->integer('proyecto_id');
             $table->timestamps();
 
