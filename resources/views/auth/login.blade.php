@@ -14,49 +14,57 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,700|Noto+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href={{asset('css/style.css')}}>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+  
 </head>
-<body>
-  <div class="" style="width:90%; margin:auto; margin-top:7rem">
-    <div class="row" style="display:flex; justify-content:space-between;">
-      <div class="bg-accent">
-        <h4 class="color-white">Sistema Institucional de Información de Proyectos de Investigación.</h4>
+<body >
+  <div class="info container d-flex align-items-center justify-content-center pt-5 ">
+    <div class="z-depth-3 px-lg-5 mr-lg-4 px-3 col-lg-9 col  bg-accent  color-white">
+      <h2 class="noto-r mb-3">Sistema Institucional de Información de Proyectos de Investigación.</h2>
+      <h4>¡Bienvenido!</h4>
+      <div class="card-body">
+        <h6>Esta plataforma te ofrece servicios como:</h6>
+        <li>Realizar el registro de tus Proyectos de Investigación</li>
+        <li>Hacer seguimiento de las solicitudes</li>
+        <li>Registrar Reportes Técnicos</li>
       </div>
-      <div class="col s7" style="margin-left:1.5rem">
-        <div class="card">
-          <div class="card-title left-align valing-wrapper">
-            <picture style="margin:10px;">
-              <img height="65px" src={{asset('img/logo_unach.png')}} alt="">
-            </picture>
-              <span>SIIPI - UNACH</span>
+      <p class="pt-4 pb-3" style="font-size:0.8em;">Si tienes alguna duda o sugerencia para mejorar nuestro servicio web, mandanos un correo a diai@unach.mx</p>             
+    </div>
+
+
+
+    <div class="col-lg-6 col-md-8 col">
+      <div class="z-depth-3">
+        <div class="card-body valign-wrapper">
+          <img class="logo" src={{asset('img/logo-unach.png')}} alt="">
+          <span class="logo-title">SIIPI- UNACH</span>
+        </div>
+
+        <div class="card-body">
+          <div class="input-field ">
+            <input id="email_inline" type="email" class="validate">
+            <label for="email_inline">Email</label>
+            <span class="helper-text" data-error="wrong" data-success="right">ejemplo@unach.mx</span>
           </div>
 
-          <div class="card-content">
-            <div  style="margin-bottom:0px !important;" class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-              </div>
+            <div class="input-field">
+              <input id="password" type="password" class="validate">
+              <label for="password">Contraseña</label>
             </div>
-            <div  style="margin-top:0px !important;"class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Contraseña</label>
-              </div>
-            </div>
-            <div class="card-actions row">
-              <button class="btn waves-effect bg-primary col s12" type="button" name="button">Ingresar </button>
-            </div>
-          </div>
+        </div>
+        <div class="border-top card-body right-align">
+          <button class="btn waves-effect bg-principal color-accent col-12 mb-3" type="submit" name="action">Iniciar sesión</button>
+          <a class="tx-accent" href="#">Registrarme...</a>
         </div>
       </div>
     </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
