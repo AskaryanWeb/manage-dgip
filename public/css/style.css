@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
+
+
 /* label color */
  .input-field label {
    color: #000;
@@ -45,6 +49,9 @@
    color: #000;
  }
 
+
+
+
 .color-white{
   color:whitesmoke;
 }
@@ -57,10 +64,40 @@
    color: #18386b !important;
  }
 
-.bg-primary{
+.bg-principal{
   background: #d2a92d !important;
 }
 
 .bg-accent{
   background: #18386b !important;
+}
+
+.noto-r{
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+.logo{
+  height: 50px;
+}
+
+.logo-title{
+  color: #18386b;
+  font-size: 1.8em;
+  font-family: 'Exo', sans-serif;
+  font-weight: 700;
+}
+
+.info{
+  height: 600px;
+  font-family: 'Noto Sans', sans-serif;
+}
+.info h2{
+  font-size: 2.1em;
+}
+
+button[type=submit]{
+  color: #18386b;
+  font-weight: 700;
+  font-size: 0.9em;
+  font-family: 'Nunito Sans', sans-serif;
 }
