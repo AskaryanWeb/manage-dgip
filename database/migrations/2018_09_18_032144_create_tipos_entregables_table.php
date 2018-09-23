@@ -15,7 +15,6 @@ class CreateTiposEntregablesTable extends Migration
     {
         Schema::create('tipos_entregables', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tipos_entregables_id')->unsigned();
             $table->string('nombre');
             $table->timestamps();
         });

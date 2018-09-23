@@ -15,12 +15,12 @@ class CreateEtapasTable extends Migration
     {
         Schema::create('etapas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('etapas_id')->unsigned();
+            $table->integer('proyecto_id')->unsigned();
             $table->text('actividad');
             $table->date('inicio');
             $table->date('conclusion');
             $table->string('estatus');
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')-onDelete('cascade');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')-onDelete('cascade');
             $table->timestamps();
         });
     }

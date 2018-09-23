@@ -15,7 +15,7 @@ class CreateAutoresTable extends Migration
     {
         Schema::create('autores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('autores_id')-unsigned();
+            $table->integer('datos_entregable_id')-unsigned();
             $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');

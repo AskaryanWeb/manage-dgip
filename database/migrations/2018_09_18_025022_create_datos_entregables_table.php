@@ -15,11 +15,12 @@ class CreateDatosEntregablesTable extends Migration
     {
         Schema::create('datos_entregables', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('datos_entregable_id')->unsigned();
-            $table->string('isbn');
+            $table->increments('reporte_id')->unsigned();
+            $table->integer('tipo_entregable_id')->unsigned();
+            $table->string('isbn')->unique();
             $table->string('titulo');
             $table->string('titulo_capitulo');
-            $table->date('fecha_ed');
+            $table->date('fecha_ed');//Fecha de edicion
             $table->string('tiraje');
             $table->string('tipo_soporte');
             $table->integer('paginas');
@@ -33,11 +34,11 @@ class CreateDatosEntregablesTable extends Migration
             $table->string('tesista');
             $table->string('director_tesis');
             $table->string('revisores_tesis');
-            $table->string('issn');
+            $table->string('issn')->unique();
             $table->string('nombre_revista');
-            $table->date('fecha_pub');
+            $table->date('fecha_pub');//fecha de publicacion
             $table->string('num_revista');
-            $table->foreign('reporte_tecnico_id')->references('id')->on('reportes')->onDelete('cascade');
+            $table->foreign('reporte_id')->references('id')->on('reportes')->onDelete('cascade');
             $table->foreign('tipos_entregables_id')->references('id')->on('tipos_entregables')-onDelete('cascade');
             $table->timestamps();
         });

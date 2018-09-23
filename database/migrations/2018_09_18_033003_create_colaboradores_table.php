@@ -15,10 +15,12 @@ class CreateColaboradoresTable extends Migration
     {
         Schema::create('colaboradores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('colaborador_id')->unsigned();
-            $table->string('grado_acad');
+            $table->integer('datos_reg_gral_id')->unsigned();
+            $table->string('grado_academico');
             $table->string('nombre');
-            $table->string('centro_adsc');
+            $table->string('paterno');
+            $table->string('materno');
+            $table->string('centro_adscripcion');
             $table->foreign('datos_reg_gral_id')->references('id')->on('datos_reg_gral')->onDelete('cascade');
             $table->timestamps();
         });

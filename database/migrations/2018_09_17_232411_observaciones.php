@@ -13,18 +13,7 @@ class Observaciones extends Migration
      */
     public function up()
     {
-        Scheme::create('observaciones', function(Blueprint $table){
 
-            $table->increments('id');
-            $table->integer('proyecto_id');
-            $table->text('observaciones');
-            $table->string('unidad_academica_clave_ua');
-            
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
-            $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
-
-
-        });
     }
 
     /**

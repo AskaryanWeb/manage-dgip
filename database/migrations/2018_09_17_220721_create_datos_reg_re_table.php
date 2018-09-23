@@ -24,7 +24,7 @@ class CreateDatosRegResTable extends Migration
             $table->string('monto_desc');
             $table->decimal('monto_total',12,2);
             $table->string('clave');
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade'); 
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade'); 
             $table->foreign('datos_reg_gral_id')->references('id')->on('datos_reg_gral')->onDelete('cascade');
             $table->timestamps();
         });

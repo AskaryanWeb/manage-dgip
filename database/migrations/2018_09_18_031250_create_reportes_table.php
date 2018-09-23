@@ -15,12 +15,12 @@ class CreateReportesTable extends Migration
     {
         Schema::create('reportes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('reportes_id')->unsigned();
+            $table->integer('etapa_id')->unsigned();
             $table->string('tipo');
             $table->string('metas');
             $table->string('formacion');
             $table->string('impacto');
-            $table->foreign('etapas_id')->references('id')->on('etapas')->onDelete('cascade');
+            $table->foreign('etapa_id')->references('id')->on('etapas')->onDelete('cascade');
             $table->timestamps();
         });
     }

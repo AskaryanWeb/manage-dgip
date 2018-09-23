@@ -15,9 +15,10 @@ class CreateInstanciasTable extends Migration
     {
         Schema::create('instancias', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('instancias_id')->unsigned();
+            $table->integer('datos_reg_gral_id')->unsigned();
             $table->string('nombre');
-            $table->string('ubicacion');
+            $table->string('ciudad',45);
+            $table->string('estado',20);
             $table->foreign('datos_reg_gral_id')->references('id')->on('datos_reg_gral')->onDelete('cascade');
             $table->timestamps();
         });

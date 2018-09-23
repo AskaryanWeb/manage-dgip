@@ -23,7 +23,7 @@ class Protocolo extends Migration
             $table->integer('proyecto_id');
             $table->timestamps();
 
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
         });
     }
 

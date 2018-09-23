@@ -30,11 +30,8 @@ class Investigador extends Migration
             $table->timestamps();
 
             $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
-
-
-            
-
         });
+
     }
 
     /**

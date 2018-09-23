@@ -19,25 +19,27 @@ class DatosRegGral extends Migration
             $table->string('titulo');
             $table->date('inicio');
             $table->date('conclusion');
-            $table->string('area_conocimiento');
-            $table->char('tipo',1);//HACER CATALOGO DE TIPOS DE INVESTIGACION
             $table->string('transferencia_patente');
-            $table->string('ca_nombre');
-            $table->string('ca_estatus');
-            $table->string('ca_lgac');
-            $table->string('rt_grado_acad');
-            $table->string('rt_nombre_comp');
-            $table->string('rt_centro_adsc');
+            $table->string('ca_estatus');//estatus del cuerpo academico (formacion. consolidacion, consolidado)
+            $table->string('rt_grado_acad');//grado academico del responable tecnico
+            $table->string('rt_nombre_comp');//nombre completo del responsable tecnico
+            $table->string('rt_centro_adsc');//Nombre del centro adscripto 
             $table->string('rt_correo');
             $table->string('rt_tel_casa');
             $table->string('rt_tel_cel');
             $table->string('estu_tesista_nombre');
             $table->string('estu_tesis_nivel');
             $table->string('clave');
-            $table->integer('proyecto_id');
+            $table->integer('proyecto_id')->unsigned();
+            $table->integer('area_conocimiento_id')->unsigned();
+            $table->string('cuerpo_academico_clave',7);
+            $table->integer('tipo_investigacion_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
+            $table->foreign('cuerpo_academico_clave')->references('clave')->on('cuerpo_academico');
+            $table->foreign('area_conocimiento_id')->references('id')->on('area_conocimiento');
+            $table->foreign('tipo_investigacion_id')->references('id')->on('tipo_investigacion');
 
         });
     }
@@ -49,6 +51,6 @@ class DatosRegGral extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('datos_reg_gral');
     }
 }
