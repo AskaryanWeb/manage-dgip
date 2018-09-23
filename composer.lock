@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "45ed787a668b6344e7b7cc3fc249898a",
     "packages": [
+        {
+            "name": "5dmatweblogin/ajaxlogin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zizohassan/laravel-ajax-login.git",
+                "reference": "c2608c8064a2308d22e25440fba948e5849fc48a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zizohassan/laravel-ajax-login/zipball/c2608c8064a2308d22e25440fba948e5849fc48a",
+                "reference": "c2608c8064a2308d22e25440fba948e5849fc48a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "AjaxLogin\\AjaxLoginProvider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "5dmatweb Team",
+                    "email": "admin@5dmat-web.com",
+                    "homepage": "https://5dmat-web.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ajax login for laravel ...",
+            "keywords": [
+                "ajax",
+                "javascript",
+                "laravel",
+                "login"
+            ],
+            "time": "2017-02-24T02:05:43+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -4057,7 +4101,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "5dmatweblogin/ajaxlogin": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

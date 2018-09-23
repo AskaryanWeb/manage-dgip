@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
 
 /* label color */
  .input-field label {
@@ -8,13 +14,15 @@
  }
  /* label focus color */
  .input-field input[type=email]:focus + label {
-   color: #d2a92d !important;
+   color: #d2a92d!important ;
  }
  /* label underline focus color */
  .input-field input[type=email]:focus {
-   border-bottom: 1px solid #d2a92d !important;
-   box-shadow: 0 1px 0 0 #d2a92d !important;
+   border-bottom: 1px solid #d2a92d!important ;
+   box-shadow: 0 1px 0 0 #d2a92d!important;
  }
+
+ 
  .input-field input[type=text]:focus + label {
    color: #d2a92d !important;
  }
@@ -50,8 +58,6 @@
  }
 
 
-
-
 .color-white{
   color:whitesmoke;
 }
@@ -72,7 +78,7 @@
   background: #18386b !important;
 }
 
-.noto-r{
+/* .noto-r{
   font-family: 'Noto Serif JP', sans-serif;
 }
 
@@ -88,12 +94,24 @@
 }
 
 .info{
-  height: 600px;
+  transform: translateY(50%);
   font-family: 'Noto Sans', sans-serif;
+  display :flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.pnel-inicio{
+  padding: 0rem 2.5rem;
+}
+
+.pnel-login{
+
+}
+
 .info h2{
   font-size: 2.1em;
-}
+} */
 
 button[type=submit]{
   color: #18386b;
@@ -101,3 +119,11 @@ button[type=submit]{
   font-size: 0.9em;
   font-family: 'Nunito Sans', sans-serif;
 }
+
+
+/* @media screen and (max-width:800px)
+{
+  .info{
+    flex-wrap: wrap-reverse;
+  }
+} */

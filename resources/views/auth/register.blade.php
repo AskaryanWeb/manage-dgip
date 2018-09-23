@@ -20,11 +20,11 @@
                         </div>
     
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" novalidate action="{{ route('register') }}">
                             @csrf
     
                                 <div class="mb-3 row mx-1">
-                                    <input id="name" class="col form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  placeholder={{ __('Name') }} type="text" name="name" value="{{ old('name') }}" required autofocus>
+                                    <input id="name" class="col form-control"  placeholder=Nombre type="text" name="name" value="{{ old('name') }}" required autofocus>
                                     <input class="form-control col mx-2 " name="paterno" type="text" placeholder="Primer apellido" required >
                                     <input class="form-control col" placeholder="Segundo apellido " name="materno" type="text">
                                     @if ($errors->has('name'))

@@ -11,6 +11,8 @@ class CreateDatosRegResTable extends Migration
      *
      * @return void
      */
+    //datos_reg_re =  Datos de registro Recurso Externo
+    //datos_reg_gral = Datos de registro Generales 
     public function up()
     {
         Schema::create('datos_reg_re', function (Blueprint $table) {
@@ -22,7 +24,7 @@ class CreateDatosRegResTable extends Migration
             $table->string('monto_desc');
             $table->decimal('monto_total',12,2);
             $table->string('clave');
-            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
+            $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade'); 
             $table->foreign('datos_reg_gral_id')->references('id')->on('datos_reg_gral')->onDelete('cascade');
             $table->timestamps();
         });

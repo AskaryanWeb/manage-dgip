@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'DGIP UNACH') }}</title>
+    <title>SIIPI - Login</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,52 +19,88 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href={{asset('css/style.css')}}>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" media="(max-width:600px)" href={{asset('css/responsive/sm-style.css')}}>
+    <link rel="stylesheet" media="(min-width:601px)" href={{asset('css/responsive/lg-style.css')}}>
+    <!-- Materializecss compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Materialize-Stepper CSS -->
+    <link rel="stylesheet" href={{asset('css/materialize-stepper.min.css')}}>
   
 </head>
 <body >
-  <div class="info container d-flex align-items-center justify-content-center pt-5 ">
-    <div class="z-depth-3 px-lg-5 mr-lg-4 px-3 col-lg-9 col  bg-accent  color-white">
-      <h2 class="noto-r mb-3">Sistema Institucional de Información de Proyectos de Investigación.</h2>
+  <div class="info ">
+    <div class="pnel-inicio z-depth-4  bg-accent  color-white">
+      <h2 class="noto-r">Sistema Institucional de Información de Proyectos de Investigación.</h2>
       <h4>¡Bienvenido!</h4>
-      <div class="card-body">
+      <div class="body-inicio">
         <h6>Esta plataforma te ofrece servicios como:</h6>
         <li>Realizar el registro de tus Proyectos de Investigación</li>
         <li>Hacer seguimiento de las solicitudes</li>
         <li>Registrar Reportes Técnicos</li>
       </div>
-      <p class="pt-4 pb-3" style="font-size:0.8em;">Si tienes alguna duda o sugerencia para mejorar nuestro servicio web, mandanos un correo a diai@unach.mx</p>             
+      <p class="" style="font-size:0.8em;">Si tienes alguna duda o sugerencia para mejorar nuestro servicio web, mandanos un correo a diai@unach.mx</p>             
     </div>
 
 
-
-    <div class="col-lg-6 col-md-8 col">
-      <div class="z-depth-3">
-        <div class="card-body valign-wrapper">
-          <img class="logo" src={{asset('img/logo-unach.png')}} alt="">
-          <span class="logo-title">SIIPI- UNACH</span>
+    
+      @csrf
+      <div class="z-depth-4 pnel-login ">
+          <form id="loginForm" action={{route('login')}} method="post">
+        <div class="logo valign-wrapper">
+          <img class="" src={{asset('img/logo-unach.png')}} alt="">
+          <span class="">SIIPI- UNACH</span>
         </div>
 
-        <div class="card-body">
-          <div class="input-field ">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">ejemplo@unach.mx</span>
+        <div class="body-login">
+          <div class="input-field " >
+            <input name="email" id="email" type="email" required  class="validate">
+            <label for="email">Correo</label>
+            <span class="helper-text right-align" data-error="Error" data-success="Listo">ejemplo@unach.mx</span>
           </div>
 
             <div class="input-field">
-              <input id="password" type="password" class="validate">
+              <input name="password" id="password" type="password"class="validate">
               <label for="password">Contraseña</label>
             </div>
         </div>
-        <div class="border-top card-body right-align">
-          <button class="btn waves-effect bg-principal color-accent col-12 mb-3" type="submit" name="action">Iniciar sesión</button>
-          <a class="tx-accent" href="#">Registrarme...</a>
+        <div class="actions">
+          <button class="btn waves-effect bg-principal color-accent" type="submit" id="btn" >Iniciar sesión</button>
+          <span>
+          <a class="tx-accent" href={{route('register')}}>Registrarme...</a>
+          </span>
         </div>
+      </form>
       </div>
-    </div>
+
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <!-- jQuery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <!-- Materializecss compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <!-- jQueryValidation Plugin (optional) -->
+ {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script> --}}
+<script src={{asset('js/validaciones.js')}}></script>
+ <!--Import Materialize-Stepper JavaScript -->
+<script src={{asset('js/materialize-stepper.min.js')}}></script>
+
+<script src="{{ url('/') }}/AjaxLogin/AjaxLogin.js"></script>
+<script>
+    AL = new Login({
+        email:"email",
+        password:"password",
+        btn:"btn",
+        url:"/login",
+        successUrl:"/",
+        mode:"toast" ///alert or toast
+    });
+    /*AL.doneLogin = function(){
+        alert('login');
+    };
+    AL.errorLogin = function (error) {
+        console.log(error)
+    };*/
+</script>
 </body>
 </html>

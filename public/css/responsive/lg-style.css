@@ -1,0 +1,64 @@
+/* ESTILOS LOGIN */
+
+.noto-r{
+    font-family: 'Noto Serif JP', sans-serif;
+    margin-bottom: 2rem;
+  }
+  
+  .logo img{
+    height: 55px;
+  }
+  
+  .logo span{
+    color: #18386b;
+    font-size: 1.8em;
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+  }
+
+  .logo{
+      margin-bottom: 2.3rem;
+  }
+  
+  .info{
+  
+    margin-top: 10%;
+    margin-bottom: 5%;
+    font-family: 'Noto Sans', sans-serif;
+    display :flex;
+    align-items: center;
+
+  }
+  
+  .pnel-inicio{
+    width: 50%;
+    margin-left: auto;
+    margin-right: 1.5rem;
+    padding: 1rem 2rem 1rem 2.5rem;
+  }
+
+  .body-inicio{
+    margin:2rem 0rem 2rem 2rem;
+    }
+  
+  .pnel-login{
+    margin-left: 1rem;
+   margin-right:auto;
+   max-width: 40%;
+   min-width: 30%;
+    padding: 1em 1.6em 1.6em 1.6em;
+  }
+
+  .actions button{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .actions span{
+    float: right;
+  }
+  .info h2{
+    font-size: 2.1em;
+  }
+  /* ---------------------------------------------------------------------------- */
+
