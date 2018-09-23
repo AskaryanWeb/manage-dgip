@@ -15,17 +15,21 @@ class UnidadAcademica extends Migration
     {
         Scheme::create('unidad_academica', function(Bluepirnt $table){
             
-            $table->string('clave_ua');
+            $table->string('clave_ua',5);
             $table->string('nombre');
             $table->string('nomb_encargado');
-            $table->string('ubicacion');
-            $table->string('password');
+            $table->string('calle');
+            $table->string('colonia');
+            $table->string('localidad');
+            $table->string('cp',5);
+            $table->string('telefono',10);            
+            $table->string('password',8);
             $table->string('pat_encargado');
             $table->string('mat_encargado');
-            $table->integer('admin_id');
+            $table->integer('administrador_id');
             $table->timestamps();
 
-            $table->foreign('admin_id')->references('id')->on('administrador')->onDelete('cascade');
+            $table->foreign('administrador_id')->references('id')->on('administrador')->onDelete('cascade');
 
         });
     }

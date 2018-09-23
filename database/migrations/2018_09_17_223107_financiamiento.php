@@ -16,10 +16,10 @@ class Financiamiento extends Migration
         //
         Screme::create('financiamiento', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('admin_id');
+            $table->integer('administrador_id');
             $table->tinyInteger('estatus');            
             $table->timestamps();
-            $table->foreign('admin_id')->references('id')->on('administrador')->onDelete('cascade');
+            $table->foreign('administrador_id')->references('id')->on('administrador');
             
 
         });

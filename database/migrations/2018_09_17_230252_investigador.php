@@ -15,8 +15,8 @@ class Investigador extends Migration
     {
         Scheme::create('investigador', function(Blueprint $table){
 
-            $table->string('num_plaza');
-            $table->string('nobre');
+            $table->string('num_plaza',5);
+            $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');
             $table->char('genero',1);
@@ -29,7 +29,7 @@ class Investigador extends Migration
             $table->string('ua_clave_ua');
             $table->timestamps();
 
-            $table->foreign('ua_clave_ua')->references('clave_ua')->on('unidad_academica')->onDelete('cascade');
+            $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
 
 
             

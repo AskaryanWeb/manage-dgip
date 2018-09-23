@@ -20,7 +20,7 @@ class DatosRegGral extends Migration
             $table->date('inicio');
             $table->date('conclusion');
             $table->string('area_conocimiento');
-            $table->char('tipo',1);
+            $table->char('tipo',1);//HACER CATALOGO DE TIPOS DE INVESTIGACION
             $table->string('transferencia_patente');
             $table->string('ca_nombre');
             $table->string('ca_estatus');

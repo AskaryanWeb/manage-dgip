@@ -18,10 +18,10 @@ class Observaciones extends Migration
             $table->increments('id');
             $table->integer('proyecto_id');
             $table->text('observaciones');
-            $table->string('ua_clave_ua');
+            $table->string('unidad_academica_clave_ua');
             
             $table->foreign('proyecto_id')->references('id')->on('proyecto')->onDelete('cascade');
-            $table->foreign('ua_clave_ua')->references('clave_ua')->on('unidad_academica')->onDelete('cascade');
+            $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
 
 
         });
