@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAutoresTable extends Migration
+class LineasGeneracion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateAutoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('autores', function (Blueprint $table) {
+        Schema::create('lineas_generacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('datos_entregable_id')->unsigned();
+            $table->string('cuerpo_academico_clave',7);
             $table->string('nombre');
-            $table->string('paterno');
-            $table->string('materno');
-            $table->foreign('datos_entregable_id')->references('id')->on('datos_entregables')->onDelete('cascade');
             $table->timestamps();
+            $table->foreign('cuerpo_academico_clave')->references('clave')->on('cuerpo_academico')->onDelete('cascade');
         });
     }
 
@@ -31,6 +29,6 @@ class CreateAutoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autores');
+        Schema::dropIfExists('lineas_generacion');
     }
 }

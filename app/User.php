@@ -16,11 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $primaryKey = 'num_plaza';
-
     public $incrementing = false;
+    public $keyType= string;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'paterno', 'materno', 'genero', 'grado_academico', 'area', 'diciplina', 'correo', 'telefono', 'unidad_academica_clave', 'email', 'password',
     ];
 
     /**

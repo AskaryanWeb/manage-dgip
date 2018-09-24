@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatosRegResTable extends Migration
+class CreateDatosRegReTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,8 @@ class CreateDatosRegResTable extends Migration
     {
         Schema::create('datos_reg_re', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('datos_reg_id')->unsigned();
+            $table->integer('datos_reg_gral_id')->unsigned();
+            $table->integer('proyecto_id')->unsigned();
             $table->string('nombre');
             $table->decimal('monto_efectivo',12,2);
             $table->decimal('monto_especie',12,2);

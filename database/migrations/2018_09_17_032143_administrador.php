@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Financiamiento extends Migration
+class Administrador extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class Financiamiento extends Migration
      */
     public function up()
     {
-        //
-        Screme::create('financiamiento', function(Blueprint $table){
+        Schema::create('administrador', function(Blueprint $table){
+
             $table->increments('id');
-            $table->integer('administrador_id');
-            $table->tinyInteger('estatus');            
+            $table->string('nombre');
+            $table->string('paterno');
+            $table->string('materno');
+            $table->string('correo');
+            $table->string('password');
             $table->timestamps();
-            $table->foreign('administrador_id')->references('id')->on('administrador');
-            
 
-        });
-
+        } );
     }
 
     /**
@@ -33,7 +33,6 @@ class Financiamiento extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('financiamiento');
+            Schema:: dropIfExists('administrador');
     }
 }

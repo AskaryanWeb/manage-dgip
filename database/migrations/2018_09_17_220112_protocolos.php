@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEtapasTable extends Migration
+class Protocolos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateEtapasTable extends Migration
      */
     public function up()
     {
-        Schema::create('etapas', function (Blueprint $table) {
+        Schema::create('protocolo', function(Blueprint $table){
             $table->increments('id');
+            $table->text('resumen');
+            $table->text('problematica');
+            $table->text('objetivo_gral');
+            $table->text('metodologia');
+            $table->text('metas');
             $table->integer('proyecto_id')->unsigned();
-            $table->text('actividad');
-            $table->date('inicio');
-            $table->date('conclusion');
-            $table->string('estatus');
-            $table->foreign('proyecto_id')->references('id')->on('proyectos')-onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
         });
     }
 
@@ -32,6 +34,6 @@ class CreateEtapasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('etapas');
+        Schema::dropIfExists('protocolo');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Investigador extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,25 +13,25 @@ class Investigador extends Migration
      */
     public function up()
     {
-        Scheme::create('investigador', function(Blueprint $table){
-
-            $table->string('num_plaza',5);
-            $table->string('nombre');
+        Schema::create('users', function (Blueprint $table) {
+            $table->string('plaza',6);
+            $table->string('unidad_academica_clave',6);
+            $table->string('name');
             $table->string('paterno');
             $table->string('materno');
             $table->char('genero',1);
             $table->string('grado_academico');
             $table->string('area');
             $table->string('diciplina');
-            $table->string('correo');
+            $table->string('email')->unique();
             $table->string('telefono');
             $table->string('password');
-            $table->string('ua_clave_ua');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('unidad_academica_clave_ua')->references('clave_ua')->on('unidad_academica');
+            $table->primary('plaza');
+            $table->foreign('unidad_academica_clave')->references('clave')->on('unidad_academica');
         });
-
     }
 
     /**
@@ -41,6 +41,6 @@ class Investigador extends Migration
      */
     public function down()
     {
-        Scheme::dropIfExists('investigador');
+        Schema::dropIfExists('users');
     }
 }

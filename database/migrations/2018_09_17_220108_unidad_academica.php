@@ -13,9 +13,9 @@ class UnidadAcademica extends Migration
      */
     public function up()
     {
-        Scheme::create('unidad_academica', function(Bluepirnt $table){
+        Schema::create('unidad_academica', function(Blueprint $table){
             
-            $table->string('clave_ua',5);
+            $table->string('clave',6);
             $table->string('nombre');
             $table->string('nomb_encargado');
             $table->string('calle');
@@ -26,9 +26,9 @@ class UnidadAcademica extends Migration
             $table->string('password',8);
             $table->string('pat_encargado');
             $table->string('mat_encargado');
-            $table->integer('administrador_id');
+            $table->integer('administrador_id')->unsigned();
             $table->timestamps();
-
+            $table->primary('clave');
             $table->foreign('administrador_id')->references('id')->on('administrador')->onDelete('cascade');
 
         });
@@ -41,6 +41,6 @@ class UnidadAcademica extends Migration
      */
     public function down()
     {
-       Scheme::deleteIfExists('unidad_academica'); 
+       Schema::dropIfExists('unidad_academica'); 
     }
 }

@@ -13,7 +13,7 @@ class DatosRegGral extends Migration
      */
     public function up()
     {
-        Scheme::create('datos_reg_gral', function(Blueprint $table){
+        Schema::create('datos_reg_gral', function(Blueprint $table){
 
             $table->increments('id');
             $table->string('titulo');
@@ -31,15 +31,15 @@ class DatosRegGral extends Migration
             $table->string('estu_tesis_nivel');
             $table->string('clave');
             $table->integer('proyecto_id')->unsigned();
-            $table->integer('area_conocimiento_id')->unsigned();
+            $table->integer('areas_conocimiento_id')->unsigned();
             $table->string('cuerpo_academico_clave',7);
-            $table->integer('tipo_investigacion_id')->unsigned();
+            $table->integer('tipos_investigacion_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
             $table->foreign('cuerpo_academico_clave')->references('clave')->on('cuerpo_academico');
-            $table->foreign('area_conocimiento_id')->references('id')->on('area_conocimiento');
-            $table->foreign('tipo_investigacion_id')->references('id')->on('tipo_investigacion');
+            $table->foreign('areas_conocimiento_id')->references('id')->on('areas_conocimiento');
+            $table->foreign('tipos_investigacion_id')->references('id')->on('tipos_investigacion');
 
         });
     }

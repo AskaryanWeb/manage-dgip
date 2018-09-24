@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAutoresTable extends Migration
+class Financiamiento extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class CreateAutoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('autores', function (Blueprint $table) {
+        //
+        Schema::create('financiamiento', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('datos_entregable_id')->unsigned();
+            $table->integer('administrador_id')->unsigned();
             $table->string('nombre');
-            $table->string('paterno');
-            $table->string('materno');
-            $table->foreign('datos_entregable_id')->references('id')->on('datos_entregables')->onDelete('cascade');
+            $table->boolean('activado');            
             $table->timestamps();
+            $table->foreign('administrador_id')->references('id')->on('administrador');
+            
+
         });
+
     }
 
     /**
@@ -31,6 +34,7 @@ class CreateAutoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('autores');
+        //
+        Schema::dropIfExists('financiamiento');
     }
 }

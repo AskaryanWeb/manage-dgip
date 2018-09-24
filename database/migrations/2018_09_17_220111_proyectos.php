@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Proyecto extends Migration
+class Proyectos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,30 +13,29 @@ class Proyecto extends Migration
      */
     public function up()
     {
-        Scheme::create('proyectos', function(Blueprint $table){
+        Schema::create('proyectos', function(Blueprint $table){
 
             $table->increments('id');
-            $table->string('matricula');
+            $table->string('matricula')->unique();
             $table->string('estatus');
-            $table->string('investigador_num_plaza');
-
-            $table->foreign('investigador_num_plaza')->references('num_plaza')->on('investigador')->onDelete('cascade');
-
-
+            $table->string('users_plaza',6);
+            $table->foreign('users_plaza')->references('plaza')->on('users')->onDelete('cascade');
         });
 
         
         Schema::create('entregables_elegidos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('tipos_entregables_id')->unsigned();
+            $table->integer('proyecto_id')->unsigned();
             $table->foreign('tipos_entregables_id')->references('id')->on('tipos_entregables');
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
             $table->timestamps();
         });        
 
-        Scheme::create('observaciones', function(Blueprint $table){
+        Schema::create('observaciones', function(Blueprint $table){
 
             $table->increments('id');
-            $table->integer('proyecto_id');
+            $table->integer('proyecto_id')->unsigned();
             $table->string('unidad_academica_clave');
             $table->text('observaciones');
             $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
@@ -52,6 +51,6 @@ class Proyecto extends Migration
      */
     public function down()
     {
-        Scheme::deleteIfExists('proyecto');
+        Schema::dropIfExists('proyecto');
     }
 }

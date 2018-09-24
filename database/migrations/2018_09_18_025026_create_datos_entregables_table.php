@@ -15,8 +15,8 @@ class CreateDatosEntregablesTable extends Migration
     {
         Schema::create('datos_entregables', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('reporte_id')->unsigned();
-            $table->integer('tipo_entregable_id')->unsigned();
+            $table->integer('reporte_id')->unsigned();
+            $table->integer('tipos_entregable_id')->unsigned();
             $table->string('isbn')->unique();
             $table->string('titulo');
             $table->string('titulo_capitulo');
@@ -39,7 +39,7 @@ class CreateDatosEntregablesTable extends Migration
             $table->date('fecha_pub');//fecha de publicacion
             $table->string('num_revista');
             $table->foreign('reporte_id')->references('id')->on('reportes')->onDelete('cascade');
-            $table->foreign('tipos_entregables_id')->references('id')->on('tipos_entregables')-onDelete('cascade');
+            $table->foreign('tipos_entregable_id')->references('id')->on('tipos_entregables');
             $table->timestamps();
         });
     }
