@@ -15,12 +15,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $primaryKey = 'num_plaza';
+    protected $primaryKey = 'plaza';
     public $incrementing = false;
-    public $keyType= string;
+    public $keyType = 'string';
 
     protected $fillable = [
-        'name', 'paterno', 'materno', 'genero', 'grado_academico', 'area', 'diciplina', 'correo', 'telefono', 'unidad_academica_clave', 'email', 'password',
+       'plaza', 'name', 'paterno', 'materno', 'genero', 'grado_academico', 'area', 'diciplina', 'email', 'telefono', 'unidad_academica_clave', 'email', 'password',
     ];
 
     /**

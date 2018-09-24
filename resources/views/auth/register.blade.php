@@ -36,14 +36,20 @@
 
 
     
-                                <div class="mb-3">
-                                    <input id="email" placeholder={{ __('E-Mail Address') }} type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-    
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
+                                <div class="row">
+                                    <div class="col form-group">
+                                        <input class="form-control" type="text" placeholder="Numero de plaza" name="plaza">
+                                    </div>
+                                    <div class="mb-3 col form-group">
+                                        <input id="email" placeholder={{ __('E-Mail Address') }} type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+        
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>            
+                                    <input placeholder="unidad academica" type="text" name="ua" class="form-control col">                        
                                 </div>
 
     
