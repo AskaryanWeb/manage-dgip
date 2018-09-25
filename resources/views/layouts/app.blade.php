@@ -1,4 +1,4 @@
-@include('materialize')
+@include('includes.semantic')
 <!DOCTYPE html>
 <html lang="en">
 <head>
