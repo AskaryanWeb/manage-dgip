@@ -1,4 +1,4 @@
-@include('includes.semantic')
+@include('includes.resources')
 <!DOCTYPE html>
 <html lang="en">
 <head>

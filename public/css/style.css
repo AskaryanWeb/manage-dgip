@@ -1,67 +1,12 @@
 
-/* *,html,body{
-  margin:0 !important;
-  padding:0 !important;
-  box-sizing: border-box !important;
-} */
+/* font-family: 'Noto Serif JP', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Muli', sans-serif; */
 
-
-/* label color */
- .input-field label {
-   color: #252525;
- }
- /* label focus color */
- .input-field input[type=email]:focus + label {
-   color: #d2a92d!important ;
- }
- /* label underline focus color */
- .input-field input[type=email]:focus {
-   border-bottom: 1px solid #d2a92d!important ;
-   box-shadow: 0 1px 0 0 #d2a92d!important;
- }
-
- 
- .input-field input[type=text]:focus + label {
-   color: #d2a92d !important;
- }
- /* label underline focus color */
- .input-field input[type=text]:focus {
-   border-bottom: 1px solid #d2a92d !important;
-   box-shadow: 0 1px 0 0 #d2a92d !important;
- }
-
- .input-field input[type=password]:focus + label {
-   color: #d2a92d !important;
- }
- /* label underline focus color */
- .input-field input[type=password]:focus {
-   border-bottom: 1px solid #d2a92d !important;
-   box-shadow: 0 1px 0 0 #d2a92d !important;
- }
-
- [type="checkbox"]:checked+span:not(.lever):before{
-  border-right: 2px solid #18386b !important;
-  border-bottom: 2px solid #18386b !important;
- }
- /* valid color */
- .input-field input[type=text].valid {
-   border-bottom: 1px solid #000;
-   box-shadow: 0 1px 0 0 #000;
- }
- /* invalid color */
- .input-field input[type=text].invalid {
-   border-bottom: 1px solid #000;
-   box-shadow: 0 1px 0 0 #000;
- }
- /* icon prefix focus color */
- .input-field .prefix.active {
-   color: #000;
- }
-
-.align-content-center{
-  display: flex;
-
+body{
+  
 }
+
 
  .logo{
   height: 100%;
@@ -91,42 +36,18 @@
   background: #18386b !important;
 }
 
- .nunito{
-  font-family: 'Nunito Sans', sans-serif;
+ .noto{
+  font-family: 'Noto Serif JP', sans-serif;
 }
 
-
-/*
-.logo{
-  height: 50px;
+.openSans{
+  font-family: 'Open Sans', sans-serif;
 }
 
-.logo-title{
-  color: #18386b;
-  font-size: 1.8em;
-  font-family: 'Exo', sans-serif;
-  font-weight: 700;
+.muli{
+  font-family: 'Muli', sans-serif;
 }
 
-.info{
-  transform: translateY(50%);
-  font-family: 'Noto Sans', sans-serif;
-  display :flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pnel-inicio{
-  padding: 0rem 2.5rem;
-}
-
-.pnel-login{
-
-}
-
-.info h2{
-  font-size: 2.1em;
-} */
 
 button[type=submit]{
   color: #18386b;

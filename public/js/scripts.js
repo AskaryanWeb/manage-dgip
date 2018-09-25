@@ -2,7 +2,9 @@
   
   $(document).ready(function(){
 
-     $('.sidenav').sidenav();
+    $('.ui.dropdown')
+    .dropdown()
+  ;
      
   });
 
