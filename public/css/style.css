@@ -7,10 +7,21 @@ body{
   
 }
 
-
- .logo{
-  height: 100%;
+.info-footer{
+  margin-top: 2em;
+  font-size: 0.8em;
 }
+
+.login-btn{
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.principal{
+height: 100%;
+
+}
+
 
 .tx-white{
   color:whitesmoke !important;
@@ -45,11 +56,11 @@ body{
 }
 
 .openSans{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .muli{
-  font-family: 'Muli', sans-serif;
+  font-family: 'Muli', sans-serif !important;
 }
 
 

@@ -38,23 +38,23 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-    protected function sendLoginResponse(Request $request)
-    {
-        $request->session()->regenerate();
+    // protected function sendLoginResponse(Request $request)
+    // {
+    //     $request->session()->regenerate();
 
-        $this->clearLoginAttempts($request);
+    //     $this->clearLoginAttempts($request);
 
-        return $this->authenticated($request, $this->guard()->user())
-            ?: "true";
-    }
+    //     return $this->authenticated($request, $this->guard()->user())
+    //         ?: "true";
+    // }
 
-    protected function sendFailedLoginResponse(Request $request)
-    {
-        $errors = [$this->username() => trans('auth.failed')];
+    // protected function sendFailedLoginResponse(Request $request)
+    // {
+    //     $errors = [$this->username() => trans('auth.failed')];
 
-        if ($request->expectsJson()) {
-            return response()->json($errors, 422);
-        }
-        return json_encode($errors);
-    }
+    //     if ($request->expectsJson()) {
+    //         return response()->json($errors, 422);
+    //     }
+    //     return json_encode($errors);
+    // }
 }
