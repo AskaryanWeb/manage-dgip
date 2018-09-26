@@ -12,8 +12,8 @@ body{
   height: 100%;
 }
 
-.color-white{
-  color:whitesmoke;
+.tx-white{
+  color:whitesmoke !important;
 }
 
  .tx-primary{
@@ -28,8 +28,12 @@ body{
    color:rgb(90, 90, 90);
  }
 
-.bg-principal{
+.bg-primary{
   background: #d2a92d !important;
+}
+
+.btn-primary:hover{
+  background: #c49c24 !important;
 }
 
 .bg-accent{
