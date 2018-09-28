@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Login - SIIPI</title>
+    <title>Login - SIRPI</title>
     @yield('css')
 </head>
 <body>
@@ -18,7 +18,7 @@
             <div class="ui raised card column bg-accent ">
                 <div class="content muli ">
                         <div class="ui huge header tx-white  muli">
-                            <p>Sistema Institucional de Información de Proyectos de Investigación.</p>
+                            <p>Sistema Institucional de Registro de Proyectos de Investigación.</p>
                         </div>
                         <div class="ui large header tx-white muli">
                             <p>¡Bienvenido!</p>
@@ -57,7 +57,7 @@
                     <h2 class="ui header ">
                     <img  src="{{asset('img/logo-unach.png')}}">
                         <div class="content tx-accent ">
-                          SIIPI - Login
+                          SIRPI - Login
                         </div>
                     </h2>
         
