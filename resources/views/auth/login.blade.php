@@ -45,7 +45,7 @@
 
                 @if ($errors->has('email'))
                     <div class="ui negative message">
-                        <i class="close icon"></i>
+                        {{-- <i class="close icon"></i> --}}
                         <div class="header">
                           <i class="icon info circle"></i> Lo sentimos, ha ocurrido un problema
                         </div>
@@ -65,10 +65,10 @@
                     <form action="{{route('login')}}" method="POST" class="ui form">
                             @csrf
                             <div class="field">
-                                <input type="text" name="email" placeholder="Correo institucional">
+                                <input type="text" name="email" placeholder="Correo institucional" required>
                             </div>    
                             <div class="field">
-                                <input type="password" placeholder="Contraseña" name="password">
+                                <input type="password" placeholder="Contraseña" name="password" required>
                             </div>
                             <div class="ui grid stackable relaxed ">
                                 <div class="field seven wide  column">
