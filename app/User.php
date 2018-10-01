@@ -20,7 +20,7 @@ class User extends Authenticatable
     public $keyType = 'string';
 
     protected $fillable = [
-       'plaza', 'name', 'paterno', 'materno', 'genero', 'grado_academico', 'area', 'diciplina', 'email', 'telefono', 'unidad_academica_clave', 'email', 'password',
+       'plaza', 'name', 'paterno', 'materno', 'genero', 'grado_academico', 'email', 'telefono', 'unidad_academica_clave', 'password',
     ];
 
     /**

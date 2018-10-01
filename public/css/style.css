@@ -3,8 +3,64 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'Muli', sans-serif; */
 
-body{
-  
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  [class*="mobile hidden"],
+  [class*="tablet only"]:not(.mobile),
+  [class*="computer only"]:not(.mobile),
+  [class*="large screen only"]:not(.mobile),
+  [class*="widescreen only"]:not(.mobile),
+  [class*="or lower hidden"] {
+    display: none !important;
+  }
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  [class*="mobile only"]:not(.tablet),
+  [class*="tablet hidden"],
+  [class*="computer only"]:not(.tablet),
+  [class*="large screen only"]:not(.tablet),
+  [class*="widescreen only"]:not(.tablet),
+  [class*="or lower hidden"]:not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  [class*="mobile only"]:not(.computer),
+  [class*="tablet only"]:not(.computer),
+  [class*="computer hidden"],
+  [class*="large screen only"]:not(.computer),
+  [class*="widescreen only"]:not(.computer),
+  [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  [class*="mobile only"]:not([class*="large screen"]),
+  [class*="tablet only"]:not([class*="large screen"]),
+  [class*="computer only"]:not([class*="large screen"]),
+  [class*="large screen hidden"],
+  [class*="widescreen only"]:not([class*="large screen"]),
+  [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+  [class*="mobile only"]:not([class*="widescreen"]),
+  [class*="tablet only"]:not([class*="widescreen"]),
+  [class*="computer only"]:not([class*="widescreen"]),
+  [class*="large screen only"]:not([class*="widescreen"]),
+  [class*="widescreen hidden"],
+  [class*="widescreen or lower hidden"] {
+    display: none !important;
+  }
 }
 
 .info-footer{
@@ -22,37 +78,52 @@ height: 100%;
 
 }
 
+.hide{
+  display: none;
+}
 
+.tx-dark{
+  color: #292929 !important;
+}
 .tx-white{
+  transition: all 0.7s !important;
   color:whitesmoke !important;
 }
 
  .tx-primary{
-   color: #d2a92d;
+   color: #d2a92d !important;
  }
 
  .tx-accent{
    color: #18386b !important;
  }
 
- .tx-light{
-   color:rgb(90, 90, 90);
+ .bg-light{
+   background: whitesmoke;
  }
 
 .bg-primary{
+  transition: all 0.7s !important;
   background: #d2a92d !important;
 }
 
 .btn-primary:hover{
-  background: #c49c24 !important;
+  transition: all 0.4s;
+  background: #b89327 !important;
 }
 
 .bg-accent{
+  transition: all 0.7s !important;
   background: #18386b !important;
 }
 
+.btn-accent:hover{
+  transition: all 0.5s !important;
+  background: #132b52 !important;
+}
+
  .noto{
-  font-family: 'Noto Serif JP', sans-serif;
+  font-family: 'Noto Serif', sans-serif !important;
 }
 
 .openSans{
@@ -63,6 +134,24 @@ height: 100%;
   font-family: 'Muli', sans-serif !important;
 }
 
+.registro{
+  width:70% !important;
+  padding-top:6%;
+}
+
+.medio{transform: translateY(30%)}
+.fa{margin-left: 0.5em;}
+.mx-1{margin-left:0.5em;margin-right: 1em;}
+.mx-2{margin-left:2em;margin-right: 2em;}
+.mr-3{margin-right: 3em !important;}
+.ml-3{margin-left: 3em !important;}
+.mr-2{margin-right: 2em !important;}
+.ml-2{margin-left: 2em !important;}
+.mt-3{margin-top: 3em !important;}
+.mb-3{margin-bottom: 3em !important;}
+.mt-2{margin-top: 2em !important;}
+.mb-2{margin-bottom: 2em !important;}
+
 
 button[type=submit]{
   color: #18386b;
@@ -71,10 +160,5 @@ button[type=submit]{
   font-family: 'Nunito Sans', sans-serif;
 }
 
+/* ----------------------------ESTILOS HOME------------------------------- */
 
-/* @media screen and (max-width:800px)
-{
-  .info{
-    flex-wrap: wrap-reverse;
-  }
-} */

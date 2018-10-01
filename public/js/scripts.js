@@ -10,9 +10,15 @@ $('#next').click(function(){
   
   $(document).ready(function(){
 
+    
+  
+
     $('.tabular.menu .item').tab();
+
     $('.ui.dropdown').dropdown();
+
     $('.ui.checkbox').checkbox();
+
     $('.message .close')
   .on('click', function() {
     $(this)
@@ -20,9 +26,26 @@ $('#next').click(function(){
       .transition('zoom');
   });
 
-  
+   $('#register').transition('fade in');
      
   });
 
- 
- 
+  // ------------------------------------- CONTROL STEP-----------------------------------------
+
+
+
+
+
+//  -------------------------------VALIDACIONES---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

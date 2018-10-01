@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div class="ui container centered grid principal" >
+    <div class="ui container centered grid principal animated fadeIn" >
         <div class="two column row stackable middle aligned">
             <div class="ui raised card column bg-accent ">
                 <div class="content muli ">
@@ -70,20 +70,21 @@
                             <div class="field">
                                 <input type="password" placeholder="Contraseña" name="password" required>
                             </div>
-                            <div class="ui grid stackable relaxed ">
-                                <div class="field seven wide  column">
-                                    <div class="ui checkbox ">
-                                        <input type="checkbox" tabindex="0" class="hidden" {{ old('remember') ? 'checked' : '' }}>
-                                        <label>Recordarme</label>
-                                    </div>
+                           
+                            <div class="field seven wide  column">
+                                <div class="ui checkbox ">
+                                    <input type="checkbox" tabindex="0" class="hidden" {{ old('remember') ? 'checked' : '' }}>
+                                    <label>Recordarme</label>
                                 </div>
-                                <a class="nine wide column" href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>                                        
                             </div>
+                               
+
                             <div class="content login-btn">
                                 <button class="fluid ui button medium bg-primary btn-primary">Iniciar sesión</button>
                             </div>
-                            <div class="row">
-                                <a class="column" href="{{route('register')}}">Registro</a> 
+                            <div class="ui row stackable grid two columns ">
+                                <a class="column floated left" href="{{route('register')}}">Registrarme</a> 
+                                <a class="column floated right" href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>                                        
                             </div>                              
                             
                         </form>
